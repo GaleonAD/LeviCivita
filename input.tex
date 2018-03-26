@@ -1,0 +1,171 @@
+\documentclass[a4paper; 11pt]{article}
+
+\bibliographystyle{alpha}
+
+
+% global includes
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{courier} %times, kurier
+\usepackage{amsmath}
+%\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{indentfirst}
+\usepackage{icomma}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage[locale=FR]{siunitx}
+\usepackage{verbatim}
+%\sisetup{per-mode=fraction}
+%\sisetup{per-mode=reciprocal}
+\sisetup{per-mode=symbol}
+\newgeometry{tmargin=2.3cm, lmargin=1.9cm, rmargin= 1.9cm, bmargin= 2.3cm}
+
+% local includes
+\usepackage{color}
+\usepackage{subfig}
+
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\tablename}{Tab.}
+\renewcommand{\abstractname}{Abstrakt}
+\renewcommand{\d}{\text{d}}
+\newcommand{\D}{\text{D}}
+
+\title{On Levi-Civita pseudotensor}
+\author{Paweł Rzońca}
+\date{\today}
+%\date{}
+
+\begin{document}
+
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LeviCivita
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In this paper we present properties of Levi-Civita pseudotensor.
+Let us firstly denote $n$ as dimention of space.
+We define covariant Levi-Civita pseudorensor as follows
+\begin{equation}
+\varepsilon^{i_1\dots i_n} = 
+\left\{ 
+\begin{array}{cl}
+1 & \text{if}\ (i_1,\ \dots, i_n)\ \text{is an even permutation}\\
+-1 & \text{if}\ (i_1,\ \dots, i_n)\ \text{is an odd permutation}\\
+0 & \text{if}\ i_p = i_q \ \text{for some}\ p,\ q \\
+\end{array}
+\right.
+\end{equation}
+and consistently contravaraint
+\begin{equation}\label{contravariant}
+\varepsilon_{i_1\dots i_n} = 
+g_{i_1 j_1} \dots g_{i_n j_n} \varepsilon^{j_1\dots j_n} ,
+\end{equation}
+where $g_{ij}$ is metric tensor $(g^{ik} g_{kj} = \delta^i_j)$ and 
+$\sqrt{-g}=1$. One can easly see that we can, 
+using equality \eqref{contravariant}, define determinant of 
+matrix $M$
+\begin{equation}
+\det ( M ) \varepsilon_{i_1\dots i_n} = 
+M_{i_1 j_1} \dots M_{i_n j_n} \varepsilon^{j_1\dots j_n} .
+\end{equation}
+It is worth mentioning that in curved space unit antisimetric pseudotensor 
+$E^{i_1\dots i_n}$ will be definied as follows
+\begin{equation}
+E^{i_1\dots i_n} = \frac{1}{\sqrt{-g}} e^{i_1\dots i_n}
+\end{equation}
+\begin{equation}
+E_{i_1\dots i_n} =\sqrt{-g} e_{i_1\dots i_n}
+\end{equation}
+Now we will present usefull properties of Levi-Civita psedotensor.
+\begin{align}
+\varepsilon^{i_1\dots i_n}\varepsilon_{i_1\dots i_n} = n!
+\end{align}
+\begin{align}
+\varepsilon^{i_1 i_2\dots i_n}\varepsilon_{j_1 i_2 \dots i_n} =
+(n-1)!\ \delta^{i_1}_{j_1} 
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 2D
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{2 dimensions}
+\\
+\begin{align}
+(\varepsilon^{ij})=
+\left(
+\begin{array}{cc}
+ 0 & 1 \\
+  -1 & 0 \\
+\end{array}
+\right)
+\end{align}
+\begin{align}
+(\varepsilon_{ij})=
+\left(
+\begin{array}{cc}
+ 0 & -1 \\
+  1 & 0 \\
+\end{array}
+\right)
+\end{align}
+\begin{align}
+\varepsilon^{ij}\varepsilon_{pq} = \delta^i_p \delta^j_q - \delta^i_q \delta^j_p
+\end{align}
+\begin{align}
+\varepsilon^{ij}\varepsilon_{jk} = \delta^i_k
+\end{align}
+\begin{align}
+\varepsilon^{ij}\varepsilon_{ij} = 2
+\end{align}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 3D
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{3 dimensions}
+\\
+\begin{align}
+\varepsilon^{ijk}\varepsilon_{pqr} = 
+\delta^i_p \delta^j_q \delta^k_r
++\delta^i_q \delta^j_r \delta^k_p
++\delta^i_r \delta^j_p \delta^k_q
+-\delta^i_p \delta^j_r \delta^k_q
+-\delta^i_r \delta^j_q \delta^k_p
+-\delta^i_q \delta^j_p \delta^k_r
+\end{align}
+\begin{align}
+\varepsilon^{ijk}\varepsilon_{ipq} = \delta^j_p \delta^k_q - \delta^j_q \delta^k_p
+\end{align}
+\begin{align}
+\varepsilon^{ipq}\varepsilon_{jpq} =2 \delta^i_j
+\end{align}
+\begin{align}
+\varepsilon^{ijk}\varepsilon_{ijk} = 6
+\end{align}
+
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 4D
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\textbf{4 dimensions}
+\\
+\begin{align}
+\varepsilon^{ipqr}\varepsilon_{jpqr} =6 \delta^i_j
+\end{align}
+\begin{align}
+\varepsilon^{ijkl}\varepsilon_{ijkl} = 24
+\end{align}
+
+\end{comment}
+
+
+\end{document}
+
+
